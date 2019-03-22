@@ -127,14 +127,14 @@ function heat_map(data) {
                 {
                     upperLabel: {
                         normal: {
-                            show: false,//false
+                            show: true,//false
                             height: 30
                         }
                     },
                     itemStyle: {
                         normal: {
-                            borderWidth: 3,
-                            gapWidth: 3
+                            borderWidth: 1,
+                            gapWidth: 1
                         }
                     }
 

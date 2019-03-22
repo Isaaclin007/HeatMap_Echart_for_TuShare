@@ -14,7 +14,8 @@ def hello_world():
 @app.route('/visualization')
 def visualization():
     daily, category = alg.gain_data(db)
-    result = alg.gain_pic(daily, category)
+    # result = alg.gain_pic(daily, category)
+    result = alg.gain_pic_no_market(daily, category)
     return render_template("pic.html", tree=result)
 
 @app.route('/indus')
