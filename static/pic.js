@@ -76,6 +76,10 @@ function heat_map(data) {
                 change = isValidNumber(change)
                     ? change.toFixed(2) + '%'
                     : '-';
+                var trade = value[2];
+                trade = isValidNumber(trade)
+                    ? echarts.format.addCommas(trade) + ''
+                    : '-';
                 var open = value[2];
                 open = isValidNumber(open)
                     ? echarts.format.addCommas(open) + ''
@@ -95,11 +99,12 @@ function heat_map(data) {
                     '开盘: &nbsp;&nbsp;' + open + '<br>',
                     '最高: &nbsp;&nbsp;' + high + '<br>',
                     '最低: &nbsp;&nbsp;' + low + '<br>',
+                    '收盘: &nbsp;&nbsp;' + trade + '<br>',
                 ].join('');
             }
         },
         series: [{
-            name: '股价',
+            name: '股价热力图 by 摸鱼大佬',
             top: 80,
             type: 'treemap',
             label: {
@@ -120,6 +125,7 @@ function heat_map(data) {
             itemStyle: {
                 normal: {
                     borderColor: 'grey',
+                    // borderColor: 'black',
 
                 }
             },

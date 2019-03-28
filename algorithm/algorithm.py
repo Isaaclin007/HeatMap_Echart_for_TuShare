@@ -180,6 +180,7 @@ def gain_pic_no_market(daily, category):
 
     industry_rate = gain_change_rate(daily, "industry")
     industry["changepercent"] = industry["name"].apply(lambda x: industry_rate['changepercent'][x])
+    # industry["changepercent"] = 0
 
     # gain all item, I'm lazy for writing a recursion
     daily_item = []
