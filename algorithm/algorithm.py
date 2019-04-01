@@ -5,16 +5,21 @@ import tushare as ts
 from algorithm.item import MapItem
 from algorithm import pymo_interface as mogoIn
 
+# pro = ts.pro_api()
 
 def gain_data(db, indus = None):
     now_time = datetime.datetime.now().strftime('%Y-%m-%d')
+    # now_time = '2019-03-28'
 
     have_data = db['daily'].find_one({"date":now_time})
     if have_data is None:
         daily = ts.get_today_all()
         category = ts.get_stock_basics()
+        # daily = ts.get_day_all(now_time)
+        # category = ts.get_stock_basics(now_time)
 
         daily['date'] = now_time
+        # daily['mktcap'] = daily['abvalues']
         category['date'] = now_time
         category['code'] = category.index
 

@@ -80,21 +80,21 @@ function heat_map(data) {
                 trade = isValidNumber(trade)
                     ? echarts.format.addCommas(trade) + ''
                     : '-';
-                var open = value[2];
+                var open = value[3];
                 open = isValidNumber(open)
                     ? echarts.format.addCommas(open) + ''
                     : '-';
-                var high = value[3];
+                var high = value[4];
                 high = isValidNumber(high)
                     ? echarts.format.addCommas(high) + ''
                     : '-';
-                var low = value[4];
+                var low = value[5];
                 low = isValidNumber(low)
                     ? echarts.format.addCommas(low) + ''
                     : '-';
 
                 return [
-                    '<div class="tooltip-title">' + echarts.format.encodeHTML(info.name) + '</div>',
+                    '<div class="tooltip-title">' + echarts.format.encodeHTML(info.id) + '</div>',
                     '涨幅: &nbsp;&nbsp;' + change + '<br>',
                     '开盘: &nbsp;&nbsp;' + open + '<br>',
                     '最高: &nbsp;&nbsp;' + high + '<br>',
@@ -119,7 +119,7 @@ function heat_map(data) {
             upperLabel: {
                 normal: {
                     show: true,//false
-                    height: 30
+                    height: 20
                 }
             },
             itemStyle: {
@@ -134,7 +134,7 @@ function heat_map(data) {
                     upperLabel: {
                         normal: {
                             show: true,//false
-                            height: 30
+                            height: 20
                         }
                     },
                     itemStyle: {

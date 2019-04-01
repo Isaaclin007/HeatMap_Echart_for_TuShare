@@ -10,7 +10,6 @@ db = client['stock']
 def hello_world():
     return redirect("/visualization")
 
-
 @app.route('/visualization')
 def visualization():
     daily, category = alg.gain_data(db)
