@@ -105,7 +105,7 @@ function heat_map(data) {
         },
         series: [{
             name: '股价热力图 by 摸鱼大佬',
-            top: 80,
+            top: 50,
             type: 'treemap',
             label: {
                 show: true,
